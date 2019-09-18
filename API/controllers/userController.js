@@ -6,12 +6,11 @@ const signature = 'L33T_K0D3';
 
 const login = (req, res) => {
     const { username, password } = req.body;
-    console.log(`${username} and ${password}`);
     let data = null;
     const user = findUser(username);
     if (user && password === user.password) {
         data = {
-            token: generateToken(),
+            token: generateToken(user),
             user: username,
             message: `User ${username} logged in successfully.`,
             status: httpStatus.OK
@@ -27,12 +26,32 @@ const login = (req, res) => {
 };
 
 const signup = (req, res) => {
-   res.send('Hello'); 
+    const { name, username, password } = req.body;
+    const id = data.users.length;
+    const user = { id, name, username, password };
+    let results = {};
+    if(name && username && password && !findUser(user.username)) {
+    insertNewUser(user);
+        results = {
+            user: username,
+            message: `User ${username} created successfully.`,
+            status: httpStatus.OK,
+            token: generateToken(user),
+        }
+        return res.status(httpStatus.OK).json(results);
+    } else {
+        results = {
+            message: `Failure: Could not create new user`,
+            status: httpStatus.UNAUTHORIZED,
+        }
+    }
+    return res.status(httpStatus.UNAUTHORIZED).json(results);
 }
 
-const generateToken = (username) => {
+const generateToken = (user) => {
     const token = jwt.sign({
-        userEmail: username,
+        id: user.id,
+        userEmail: user.username,
     },
         signature, { expiresIn: '1d' }
     );
@@ -40,6 +59,10 @@ const generateToken = (username) => {
 }
 
 const verifyToken = (token) => jwt.verify(token, signature);
+
+const insertNewUser = (user) => {
+    data.users.push(user);
+}
 
 const findUser = (username) => data.users.find(x => x.username === username);
 
