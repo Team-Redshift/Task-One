@@ -44,3 +44,35 @@ describe('POST /login', () => {
             });
     });
 });
+
+describe('POST /signup', () => {
+    it('should successfully sign up new user', done => {
+        request(app)
+        .post(apiCalls.signup)
+        .send({ name: 'Gfred Tech', username: 'gfredtech', password: 'gameboy'})
+        .set('Accept', 'application/json')
+        .expect('COntent-Type', /json/)
+        .expect(httpStatus.OK)
+        .end((err, response) => {
+            if (err) return done(err);
+            assert.strictEqual(response.body.status, httpStatus.OK);
+            assert.notStrictEqual(response.body.token, undefined);
+            done();
+        });
+    });
+
+    it('should reject new signup because user with username already exists', done => {
+        request(app)
+        .post(apiCalls.signup)
+        .send({ name: 'Another suparman', username: 'suparman', password: 'somerandomtext'})
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(httpStatus.UNAUTHORIZED)
+        .end((err, response) => {
+            if (err) return done(err);
+            assert.strictEqual(response.body.status, httpStatus.UNAUTHORIZED);
+            assert.strictEqual(response.body.token, undefined);
+            done();
+        });
+    });
+});
