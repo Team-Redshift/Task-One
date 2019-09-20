@@ -1,0 +1,183 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  background-color: lightblue;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.5em;
+  margin: 0.5em;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: grey;
+}
+
+.story {
+  margin: 0px 50px;
+}
+
+.header {
+  margin-left: 50px;
+}
+
+a.button {
+  border: solid 2px;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+li.button {
+  float: right;
+}
+
+#signup-button {
+  border-color: green;
+}
+
+#login-main {
+  display: table;
+  height: 80vh;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+#login-main form {
+  display: table-cell;
+  vertical-align: middle;
+  margin: auto auto 20% auto;
+  width: 350px;
+  font-size: large;
+}
+
+#login-main .auth-form-header {
+  padding: 10px 20px;
+  color: white;
+  background: lightblue;
+  border-radius: 3px 3px 0 0;
+}
+
+#login-main .auth-form-body {
+  padding: 20px;
+  font-size: 14px;
+  border: thin silver solid;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+}
+
+label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input {
+  display: block;
+  height: 100%;
+  padding: 5px 9px;
+  line-height: 1.4;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.login-header {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.dashboard-header {
+  font-weight: bold;
+  font-size: 90px;
+}
+
+table {
+  border: 1px solid black;
+}
+th,
+td {
+  padding: 15px;
+}
+table {
+  border-spacing: 5px;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 60px 10px;
+  margin: 10px;
+  width: 140px;
+  height: 80px;
+}
+
+.second-title {
+  color: rgba(0, 0, 0, 0.92);
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: 700;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  display: table;
+  border-spacing: 2px;
+  border-color: grey;
+}
+
+.mentor-tr {
+  background-color: #003668;
+  height: 50px;
+  border: 1px solid #003668;
+}
+
+th {
+  color: white;
+  position: relative;
+}
+
+.left-align {
+  text-align: left;
+}
+
+p.login-info {
+font-size: 0.7em;
+  color: red;
+  font-weight: lighter;
+}
+
+p.correct {
+  display: none;
+}
