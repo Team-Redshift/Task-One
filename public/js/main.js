@@ -1,4 +1,4 @@
-const api = "http://127.0.0.1:3000/api/v1";
+const api = "https://radiant-crag-38983.herokuapp.com/api/v1";
 
 const checkLogin = results => {
   const incorrect = document.querySelector("p.login-info");
