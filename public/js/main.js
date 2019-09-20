@@ -5,7 +5,7 @@ const checkLogin = results => {
   if (results.status == 200) {
     incorrect.classList.add("correct");
     window.setTimeout(function() {
-      window.location = "./welcome.html";
+      window.location = "https://radiant-crag-38983.herokuapp.com/welcome";
     }, 2000);
   } else {
     incorrect.classList.remove("correct");
@@ -17,7 +17,7 @@ const doSignup = results => {
   if(results.status == 200) {
     message.value = "";
     window.setTimeout(function() {
-      window.location = "./welcome.html";
+      window.location = "https://radiant-crag-38983.herokuapp.com/welcome";
     }, 2000);
   } else {
     message.value = results.message;

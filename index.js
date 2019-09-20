@@ -21,7 +21,10 @@ app.use(express.static('public'));
 app.post(apiCalls.login, login);
 app.post(apiCalls.signup, signup);
 app.post(apiCalls.fetchUser, fetchUser);
-app.get('/', (_, res) => res.sendFile(path.join(__dirname, '/public', 'login.html'))); 
+
+app.get('/', (_, res) => res.sendFile(path.join(__dirname, '/public', 'index.html'))); 
+app.get('/login', (_, res) => res.sendFile(path.join(__dirname, '/public', 'login.html'))); 
+app.get('/signup', (_, res) => res.sendFile(path.join(__dirname, '/public', 'signup.html'))); 
 
 
 app.listen(port, () => console.log(`Web service started on port ${port}...`));
