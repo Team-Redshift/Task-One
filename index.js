@@ -20,6 +20,8 @@ app.use(express.static('public'));
 app.post(apiCalls.login, login);
 app.post(apiCalls.signup, signup);
 app.post(apiCalls.fetchUser, fetchUser);
+app.get('/', (_, res) => res.render('public/login.html'))
+
 
 app.listen(port, () => console.log(`Web service started on port ${port}...`));
 module.exports = { app, apiCalls };
