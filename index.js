@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const { login, signup, fetchUser } = require("./controllers/userController");
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const root = "/api/v1";
 const apiCalls = {
