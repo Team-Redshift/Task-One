@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <title>Login</title>
     <script type="text/javascript" src="js/main.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1 class="login-header">
-        Login to Hotels.NG Platform
+      Login to Hotels.NG Platform
     </h1>
     <div id="login-main" class="container">
-        <form name="login" method="POST" role="form" onsubmit="loginUser(); return false;">
+      <form
+        name="login"
+        method="POST"
+        role="form"
+        onsubmit="loginUser(); return false;"
+      >
         <p class="correct login-info">Incorrect Username/password</p>
-            <div class="auth-form-header">
-                Sign In
-            </div>
-            <div class="auth-form-body">
-                <label for="email-input">Email:</label>
-                <input id="email-input" type="text" name="email" autofocus="autofocus" />
-                <label for="password-input">Password:</label>
-                <input type="password" name="password" id="password-input" tabindex="2" />
-                <input type="submit" id="login-submit" value="Sign In" tabindex="3" />
-            </div>
-        </form>
+        <div class="auth-form-header">
+          Sign In
+        </div>
+        <div class="auth-form-body">
+          <label for="email-input">Email:</label>
+          <input
+            id="email-input"
+            type="text"
+            name="email"
+            autofocus="autofocus"
+          />
+          <label for="password-input">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password-input"
+            tabindex="2"
+          />
+          <input type="submit" id="login-submit" value="Sign In" tabindex="3" />
+        </div>
+      </form>
     </div>
-</body>
-
+  </body>
 </html>
