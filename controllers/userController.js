@@ -49,6 +49,10 @@ const signup = (req, res) => {
   }
 };
 
+const fetchUser = (token) => {
+
+};
+
 const generateToken = user => {
   const token = jwt.sign(
     {
@@ -69,4 +73,4 @@ const insertNewUser = user => {
 
 const findUser = username => data.users.find(x => x.username === username);
 
-module.exports = { login, signup };
+module.exports = { login, signup, fetchUser };

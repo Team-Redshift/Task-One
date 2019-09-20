@@ -1,11 +1,11 @@
-const api = "http://127.0.0.1:3000/api/v1";
+const api = "https://radiant-crag-38983.herokuapp.com/api/v1";
 
 const checkLogin = results => {
   const incorrect = document.querySelector("p.login-info");
   if (results.status == 200) {
     incorrect.classList.add("correct");
     window.setTimeout(function() {
-      window.location = "./welcome.html";
+      window.location = "https://radiant-crag-38983.herokuapp.com/welcome";
     }, 2000);
   } else {
     incorrect.classList.remove("correct");
@@ -13,14 +13,14 @@ const checkLogin = results => {
 };
 
 const doSignup = results => {
-  const message = document.querySelector("p.signup-message");
+  const message = document.querySelector("p.login-info");
   if(results.status == 200) {
     message.value = "";
     window.setTimeout(function() {
-      window.location = "./welcome.html";
+      window.location = "https://radiant-crag-38983.herokuapp.com/login";
     }, 2000);
   } else {
-    message.value = results.message;
+    message.innerHTML = results.message;
   }
 }
 
