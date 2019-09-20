@@ -1,5 +1,6 @@
 const checkLogin = (results) => {
     if (results.status == 200) {
+        incorrect.classList.add('correct');
         window.setTimeout(function () {
             window.location = "./welcome.html";
         }, 2000);
