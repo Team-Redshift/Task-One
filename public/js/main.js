@@ -17,7 +17,7 @@ const doSignup = results => {
   if(results.status == 200) {
     message.value = "";
     window.setTimeout(function() {
-      window.location = "https://radiant-crag-38983.herokuapp.com/welcome";
+      window.location = "https://radiant-crag-38983.herokuapp.com/login";
     }, 2000);
   } else {
     message.value = results.message;
