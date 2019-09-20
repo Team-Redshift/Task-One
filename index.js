@@ -25,6 +25,7 @@ app.post(apiCalls.fetchUser, fetchUser);
 app.get('/', (_, res) => res.sendFile(path.join(__dirname, '/public', 'index.html'))); 
 app.get('/login', (_, res) => res.sendFile(path.join(__dirname, '/public', 'login.html'))); 
 app.get('/signup', (_, res) => res.sendFile(path.join(__dirname, '/public', 'signup.html'))); 
+app.get('/welcome', (_, res) => res.sendFile(path.join(__dirname, '/public', 'welcome.html'))); 
 
 
 app.listen(port, () => console.log(`Web service started on port ${port}...`));
