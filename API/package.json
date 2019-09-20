@@ -23,6 +23,7 @@
     "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "mocha": "^6.2.0",
     "supertest": "^4.0.2"
   }

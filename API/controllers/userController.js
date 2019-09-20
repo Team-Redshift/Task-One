@@ -7,14 +7,15 @@ const signature = 'L33T_K0D3';
 const login = (req, res) => {
     const { username, password } = req.body;
     let data = null;
+    console.log("hey", username, password);
     const user = findUser(username);
     if (user && password === user.password) {
         data = {
-            token: generateToken(user),
+            token: user.token || generateToken(user),
             user: username,
             message: `User ${username} logged in successfully.`,
             status: httpStatus.OK
-        }
+        };
         return res.status(httpStatus.OK).json(data);
     } else {
         data = {
@@ -44,8 +45,8 @@ const signup = (req, res) => {
             message: `Failure: Could not create new user`,
             status: httpStatus.UNAUTHORIZED,
         }
-    }
     return res.status(httpStatus.UNAUTHORIZED).json(results);
+    }
 }
 
 const generateToken = (user) => {
